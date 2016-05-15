@@ -1,5 +1,5 @@
 [![logo](/assets/flickerjs.png)](https://www.npmjs.com/package/flickerjs)
-A Super fast and simple web framework for [node.js](http://nodejs.org/).
+Super rapido y simple framework web para [node.js](http://nodejs.org/).
 
 [![Build Status](https://travis-ci.org/FlickerStudio/flickerjs.svg?branch=master)](https://travis-ci.org/FlickerStudio/flickerjs) [![Dependency Status](https://david-dm.org/flickerstudio/flickerjs.svg)](https://david-dm.org/flickerstudio/flickerjs) [![Build status](https://ci.appveyor.com/api/projects/status/qgxx72iq7wiluutm?svg=true)](https://ci.appveyor.com/project/flickerapps/flickerjs)
 ```javascript
@@ -15,37 +15,43 @@ app
     .listen(3000);
 
 ```
-Install
+
+Aviso
+====
+Aun no tenemos un paquete de npm, a causa no que aun no tenemos un nombre especifico para el framework hispano. Si deseas sugerir un nombre puedes comentarlo [aqui](https://github.com/FlickerStudio/flickerjs/issues/6)
+
+Por Ahora puedes instalar su version en ingles: Flicker.js
+Instalar
 ====
 ```
 $ npm install flickerjs
 ```
 
-Usage
+Como usar
 ====
-via [flicker-easy](https://www.npmjs.com/package/flicker-easy) package.
-Generating the app:
+a traves del paquete [flicker-easy](https://www.npmjs.com/package/flicker-easy).
+Generamos la aplicacion:
 ```
-$ flickerjs todolist
+$ flickerjs miaplicacion
 ```
-Or
+O especificando el directorio
 ```
-$ flicker todolist /mydir
-$ cd mydir
+$ flicker miapp /mifolder
+$ cd mifolder
 ```
-Install dependencies:
+Instalamos dependencias:
 ```
 $ npm install
 ```
-Starting your server
+Arrancamos el servidor
 ```
 $ npm start
 ```
 
-Examples
+Ejemplos
 ====
-To view examples clone the repo and run the example you want.
-List of example files:
+Para ver los ejemplos, clona el repositorio y luego corre el ejemplo que quieras.
+Lista de archivos de ejemplo:
 
 * api.js
 * app.js
@@ -61,26 +67,26 @@ $ node /examples/[file]
 
 ```
 
-Tests
+Tests (Pruebas)
 ====
-To run tests, after you clone the repo:
+Para correr las pruebas, luego de clonar el repositorio:
 ```
 $ npm install
 $ npm test
 ```
 
-Mini Doc
+Mini Dococumentacion
 ====
 [Flicker Quick Guide](GUIDE.md)
 
 
 
-Contributors
+Contribuidores
 ====
-Thanks to:
+Gracias a:
 * [Christopher Ventura](http://github.com/chrisvent)
 * [Dawson Botsford](http://github.com/dawsonbotsford)
 
-License
+Licencia
 ====
-[MIT](LICENSE)
+[MIT](LICENCIA)
