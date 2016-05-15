@@ -22,15 +22,15 @@ app.set('template','pug')
     .add(cookieParser())
 
 
-// inherited in renders
+// heredado en las vistas
 app.locals.year = 2016;
 app.locals.site_title = 'MyFlicker.com';
 app.locals.site_description = 'Flicker.js demo';
 
 app
     .add(
-        (req,res,next) => { // custom middleware
-            // inherited in renders
+        (req,res,next) => { // middleware propio
+            // heredado en las vistas
             res.locals.author = "Flicker.js";
             next();
         }
@@ -41,7 +41,7 @@ app
     })
     .add(
         (req,res,next) => {
-            var err = new Error('Not Found');
+            var err = new Error('No Encontrado');
             err.status = 404;
             next(err);
         }

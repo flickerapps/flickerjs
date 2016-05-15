@@ -2,7 +2,7 @@ const flicker = require('../');
 let app = flicker();
 
 app.add(app.serveStatic());
-// inherited in renders
+// para ser heredado en las vistas
 app.locals.year = 2016;
 
 app
@@ -15,7 +15,7 @@ app
                 next();
             },
             (req,res,next) => {
-                res.render('index',{title: 'Welcome to Flicker.js'});
+                res.render('index',{title: 'Bienvenido a Flicker.js'});
             }
         ]
     })

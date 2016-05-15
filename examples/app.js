@@ -6,7 +6,7 @@ const compress = require('compression');
 const logger = require('morgan');
 let app = flicker();
 let fooRouter = app.Router();
-let barRouter = require('./routers/bar.js'); // external router file
+let barRouter = require('./routers/bar.js'); // archivo de router externo
 
 app.set('template','pug')
     .set('static dir',__dirname + '/public')
@@ -21,13 +21,13 @@ app.set('template','pug')
     .add(cookieParser());
 
 
-// inherited in renders
+// heredado en las vistas
 app.locals.year = 2016;
 
 app
     .add(
         (req,res,next) => {
-            // inherited in renders
+            // heredado en las vistas
             res.locals.author = "Flicker.js";
             next();
         }
@@ -39,14 +39,14 @@ fooRouter
         url: '/',
         method: 'GET',
         handler: (req,res,next) => {
-            res.render('index',{title: 'Welcome to Flicker.js', message: 'Hello, I`m ' + req.url});
+            res.render('index',{title: 'Bienvenido a Flicker.js', message: 'Hola, Soy ' + req.url});
         }
     })
     .add({
         url: '/bar',
         method: 'GET',
         handler: (req,res,next) => {
-           res.render('index',{title: 'Welcome to Flicker.js', message: 'Hello, I`m ' + req.url});
+            res.render('index',{title: 'Bienvenido a Flicker.js', message: 'Hola, Soy ' + req.url});
         }
     })
 
@@ -76,20 +76,20 @@ app
     .add({
         url: '/',
         handler: (req,res,next) => {
-            res.render('index',{title: 'Welcome to Flicker.js'});
+            res.render('index',{title: 'Bienvenido a Flicker.js'});
         }
     })
     .add({
         url: '/test',
         handler: (req,res,next) => {
-            res.render('index',{title: 'Welcome to Flicker.js', message: 'Hello, I`m ' + req.url});
+            res.render('index',{title: 'Bienvenido a Flicker.js', message: 'Hola, Soy ' + req.url});
         }
     })
 
     .add({
         url: '/blog',
         handler: (req,res,next) => {
-            res.render('index',{title: 'Welcome to Flicker.js', message: 'Hello, I`m ' + req.url});
+            res.render('index',{title: 'Bienvenido a Flicker.js', message: 'Hola, Soy ' + req.url});
         }
     })
     .add({
@@ -104,7 +104,7 @@ app
     .add({
         handler:[
             (req,res,next) => {
-                var err = new Error('Not Found');
+                var err = new Error('No encontrado');
                 err.status = 404;
                 next(err);
             },
@@ -117,5 +117,5 @@ app
         ]
     })
     .listen(3000, () => {
-        console.log('Running...');
+        console.log('Corriendo...');
     });

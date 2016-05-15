@@ -13,26 +13,26 @@ app
 let api = app.Router();
 
 app.locals.todos = [
-    { description: "Lorem 0" },
-    { description: "Lorem 1" },
-    { description: "Lorem 2" },
-    { description: "Lorem 3" },
-    { description: "Lorem 4" },
-    { description: "Lorem 5" }
+    { descripcion: "Lorem 0" },
+    { descripcion: "Lorem 1" },
+    { descripcion: "Lorem 2" },
+    { descripcion: "Lorem 3" },
+    { descripcion: "Lorem 4" },
+    { descripcion: "Lorem 5" }
 ];
 
 api
     .add({
         url:'/todos',
         method: 'GET',
-        handler: (req,res,next) => { /* return todos */
+        handler: (req,res,next) => { /* retorna los todos */
             res.json(app.locals.todos);
         }
     })
     .add({
         url: '/todos/:todo',
         method: 'GET',
-        handler: (req,res,next) => { /*  return todo */
+        handler: (req,res,next) => { /*  retorna un todo */
             if(req.params.todo >= app.locals.todos.length){
                 next();
             }
@@ -44,7 +44,7 @@ api
     .add({
         url: '/todos',
         method: 'POST',
-        handler: (req,res,next) => { /*  insert todo */
+        handler: (req,res,next) => { /*  inserta un todo */
             app.locals.todos.push(req.body.todo);
             res.json(app.locals.todos)
         }
@@ -52,7 +52,7 @@ api
     .add({
         url:'/todos/:todo',
         method: 'DELETE',
-        handler: (req,res,next) => { /*  delete todo */
+        handler: (req,res,next) => { /*  borra un todo */
             if(req.params.todo >= app.locals.todos.length){
                 next();
             }
@@ -65,7 +65,7 @@ api
     .add({
         url: '/todos/:todo',
         method: 'PUT',
-        handler: (req,res,next) => { /*  edit todo */
+        handler: (req,res,next) => { /*  edita un todo */
             if(req.params.todo >= app.locals.todos.length){
                 next();
             }
@@ -79,7 +79,7 @@ api
 app
     .add({
         url: '/api',
-        handler: api /* include the router */
+        handler: api /* lo incluimos en el router */
     })
     .add({
         url: '/',
@@ -88,6 +88,6 @@ app
         }
     })
     .add((req,res,next) => {
-        res.json({}); // return a empty json
+        res.json({}); // returnorna un json vacio
     })
-    .listen(3000); /* listen */
+    .listen(3000); /* escuchar en el puerto 3000 */

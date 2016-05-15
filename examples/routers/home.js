@@ -7,7 +7,7 @@ router
         url: '/',
         method: 'GET',
         handler: (req,res,next) => {
-           res.render('index',{title: 'Welcome to Flicker.js', message: 'FlickerJS is Running'});
+           res.render('index',{title: 'Welcome to Flicker.js', message: 'FlickerJS esta funcionando'});
             }
     })
     .add({
@@ -20,10 +20,10 @@ router
         method: 'GET',
         handler: (req,res,next) => {
             var alert = {
-                msg: 'Incorrect Username or Password',
+                msg: 'Password o usuario incorrecto',
                 type: 'error'
             }
-            res.render('index',{title: 'Sign In'});
+            res.render('index',{title: 'Iniciar Sesion'});
         }
     })
 

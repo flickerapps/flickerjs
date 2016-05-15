@@ -3,18 +3,18 @@ let app = flicker();
 
 app.add(
     (req,res,next) => {
-        console.log('Atention: ');
+        console.log('Aviso: ');
         next();
     }
 )
     .add({
         handler:[
             (req,res,next) => {
-                console.log('You should see this');
+                console.log('Deberias ver esto porque aariba use next');
                 res.end();
             },
             (req,res,next) => {
-                console.log('but, You do not should see this');
+                console.log('Pero, no deberias ver esto porque arriba no use next');
                 res.end();
             }
 

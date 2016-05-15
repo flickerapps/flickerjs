@@ -6,7 +6,7 @@ router
         method: 'GET',
         handler: (req,res,next) => {
             var alert = {
-                msg: 'No Posts found.',
+                msg: 'No se encontraron entradas',
                 type: 'info'
             }
             res.render('index', {title: 'Blog', alert: alert} );

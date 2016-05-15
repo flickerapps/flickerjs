@@ -7,14 +7,14 @@ router
         url: '/foo',
         method: 'GET',
         handler: (req,res,next) => {
-            res.render('index',{title: 'Welcome to Flicker.js', message: 'Hello, I`m ' + req.url});
+            res.render('index',{title: 'Bienvenido a Flicker.js', message: 'Hola, Soy ' + req.url});
         }
     })
     .add({
         url: '/',
         method: 'GET',
         handler: (req,res,next) => {
-           res.render('index',{title: 'Welcome to Flicker.js', message: 'Hello, I`m ' + req.url});
+            res.render('index',{title: 'Bienvenido a Flicker.js', message: 'Hola, Soy ' + req.url});
         }
     })
 
