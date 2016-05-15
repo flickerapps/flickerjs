@@ -7,16 +7,16 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const flicker = require('../');
 
-describe('App',
+describe('Aplicacion',
     () => {
-        it('should be callable',
+        it('Debe ser ejecutable',
             () => {
                 let app = flicker();
                 assert.equal(typeof app,'function');
             }
         );
 
-        it('get and set',
+        it('Functiones get y set',
             (done) => {
                 let app = flicker()
                 .add((req,res,next) => {
@@ -31,7 +31,7 @@ describe('App',
                 .expect(200,'bar',done);
             }
         );
-        it('locals should be inherited',
+        it('Locals deben ser heredadas',
             (done) => {
                 let app = flicker()
                 app.locals = { blog_title: 'Lorem Ipsum'};
@@ -53,9 +53,9 @@ describe('App',
         );
     }
 );
-describe('Router statusCode',
+describe('Codigos de estados del Router',
     () => {
-        it('should be 200',
+        it('debe ser 200',
             (done) => {
                 let app = flicker()
                 .add((req,res,next) => {
@@ -66,7 +66,7 @@ describe('Router statusCode',
                 .expect(200,done);
 
         });
-        it('should be 404',
+        it('debe ser 404',
             (done) => {
                 let app = flicker()
                 request(app)
@@ -74,7 +74,7 @@ describe('Router statusCode',
                 .expect(404,done);
 
         });
-        it('should be 201',
+        it('debe ser 201',
             (done) => {
                 let app = flicker()
                 .add(
@@ -87,7 +87,7 @@ describe('Router statusCode',
                 .expect(201,done);
             }
         );
-        it('should be 500',
+        it('debe ser 500',
             (done) => {
                 let app = flicker()
                 .add((req,res) => {
@@ -101,9 +101,9 @@ describe('Router statusCode',
     }
 );
 
-describe('Router delegation',
+describe('Delegacion de Routers',
     () => {
-        it('include router',
+        it('incluir router',
             (done) => {
                 let app = flicker()
                 let router = app.Router()
@@ -123,7 +123,7 @@ describe('Router delegation',
                 .expect(200,done);
             }
         );
-        it('Nested routers',
+        it('Routers aninados',
             (done) => {
                 let app = flicker()
                 let router1 = app.Router();
@@ -185,9 +185,9 @@ describe('Router delegation',
     }
 );
 
-describe('Routing HTTP verbs',
+describe('Manejando diferentes verbos HTTP ',
     () => {
-        it('middleares responses all verbs',
+        it('los middlewares responden en todos los verbos',
             (done) => {
                 let app = flicker()
                 .add(
@@ -298,7 +298,7 @@ describe('Routing HTTP verbs',
         );
 
 
-        it('GET do not reponses for POST method',
+        it('GET no responde para el metodo POST',
             (done) => {
                 let app = flicker()
                 let router = app.Router();
@@ -316,7 +316,7 @@ describe('Routing HTTP verbs',
             }
         );
 
-        it('PUT do not reponses for DELETE method',
+        it('PUT no responde por el metodo DELETE',
             (done) => {
                 let app = flicker()
                 let router = app.Router();
@@ -336,7 +336,7 @@ describe('Routing HTTP verbs',
     }
 );
 
-describe('Response Object',
+describe('Objecto Response',
     () => {
         it('end()',
             (done) => {
@@ -382,7 +382,7 @@ describe('Response Object',
             }
         );
 
-        it('preventStatus() do not override the current statusCode',
+        it('preventStatus() no sobreescribe el codigo de estado actual',
             (done) => {
                 let app = flicker()
                 .add(
@@ -457,7 +457,7 @@ describe('Response Object',
                 .expect(302,done);
             }
         );
-        it('locals should be inherited',
+        it('locals debe ser heredados',
             (done) => {
                 let app = flicker()
                 .add((req,res,next) => {
@@ -478,9 +478,9 @@ describe('Response Object',
     }
 );
 
-describe('Request Object',
+describe('Objeto Request',
     () => {
-        it('body should be inherited',
+        it('body debe ser heredado',
             (done) => {
                 let app = flicker()
                 let router = app.Router();
@@ -501,7 +501,7 @@ describe('Request Object',
                 .expect(200,'me',done);
         });
 
-        it('cookies should be inherited',
+        it('cookies debe ser heredados',
             (done) => {
                 let app = flicker()
                 let router = app.Router();
@@ -609,7 +609,7 @@ describe('Request Object',
     }
 );
 
-describe('Serving Static content',
+describe('Sirviendo contenido estatico',
     () => {
         it('OK /favicon.ico',
             (done) => {

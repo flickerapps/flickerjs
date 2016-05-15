@@ -30,7 +30,7 @@ podemos asignar routers para un path (o todos)  y un metodo (verbo http) a trave
 |-----|---------|
 | req | Peticion. |
 | res | Respuesta. |
-| next | Siguiente middleware a llamae. |
+| next | Siguiente middleware a llamar. |
 
 ```javascript
 app.add(
@@ -54,7 +54,7 @@ res.locals /* => es similar a app.locals  pero solo permanece en la peticion act
 ```
 
 ##Router
-Es un manejador para tus urls. Puedes anidar los routers que quieras a tu aplicacion, asi como a routers.
+Es un manejador para tus urls. Puedes anidar los routers que quieras a tu aplicacion, asi como a otros routers.
 ```javascript
 let router = app.Router();
 
