@@ -77,7 +77,7 @@ $ npm test
 
 Mini Dococumentacion
 ====
-[Flicker Quick Guide](GUIDE.md)
+[Guia rapida](GUIA.md)
 
 
 
