@@ -16,11 +16,6 @@ app
 
 ```
 
-Aviso
-====
-Aun no tenemos un paquete de npm, a causa no que aun no tenemos un nombre especifico para el framework hispano. Si deseas sugerir un nombre puedes comentarlo [aqui](https://github.com/FlickerStudio/flickerjs/issues/6)
-
-Por Ahora puedes instalar su version en ingles: Flicker.js
 Instalar
 ====
 ```
